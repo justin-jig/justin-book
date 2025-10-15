@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { id } = await params;
+  const { id } = params;
   const { title } = await getPostById('interface/html', id);
   if (!title) {
     return {
