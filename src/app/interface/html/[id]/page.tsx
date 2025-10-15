@@ -1,10 +1,10 @@
 import { getPostById, getAllPosts } from '../../../../lib/api';
 
 type PageProps = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 const Post = async ({ params }: PageProps) => {
-  const { id } =  params;
+  const { id } = await params;
   const { html, title, date } = await getPostById('interface/html', id);
   return (
     <article>
@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { id } = params;
+  const { id } = await params;
   const { title } = await getPostById('interface/html', id);
   if (!title) {
     return {
