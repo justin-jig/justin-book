@@ -1,9 +1,9 @@
 import { getPostById, getAllPosts } from '../../../../lib/api';
 
-type Props = {
+type PageProps = {
   params: { id: string }
 }
-const Post = async ({ params }: Props) => {
+const Post = async ({ params }: PageProps) => {
   const { id } =  params;
   const { html, title, date } = await getPostById('interface/html', id);
   return (
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const { title } = await getPostById('interface/html', id);
   if (!title) {
