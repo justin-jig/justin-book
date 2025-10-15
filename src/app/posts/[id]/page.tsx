@@ -28,6 +28,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { id } = await params;
   const { title } = await getPostById(id);
+  if (!title) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
   return {
     title,
   };

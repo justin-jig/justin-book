@@ -10,7 +10,8 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-const postsDirectory = path.join(process.cwd(), '_posts');
+const postsDirectory = path.join(process.cwd(), '/src/_posts');
+console.log('postsDirectory', postsDirectory);
 
 function getPostFiles() {
   return fs.readdirSync(postsDirectory);
