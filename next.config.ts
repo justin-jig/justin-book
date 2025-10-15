@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     unoptimized: true, // export 모드에서는 필수
   },
   trailingSlash: true, // export 모드에서 권장: 각 페이지가 폴더처럼 처리됨
-   pageExtensions: ["ts", "tsx", "mdx"], // MDX 파일도 페이지로 인식
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'], // MDX 파일도 페이지로 인식
 
 
 };

@@ -4,7 +4,7 @@ type Props = {
   params: Promise<{ id: string }>
 }
 const Post = async ({ params }: Props) => {
-  const { id } = await params;
+  const { id }:any =  params;
   const { html, title, date } = await getPostById('interface/html', id);
   return (
     <article>
@@ -19,7 +19,6 @@ export default Post;
 
 export async function generateStaticParams() {
   const posts = await getAllPosts('interface/html');
-
   return posts.map((post:any) => ({
     id: post.id,
   }));

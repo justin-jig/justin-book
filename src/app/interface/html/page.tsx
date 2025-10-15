@@ -1,20 +1,13 @@
 
-import { getAllPosts } from '../../../lib/api';
+import { getAllPosts, getAllPostsTitle } from '../../../lib/api';
+
+import PostLayoutComponents from "../../../common/components/PostLayout";
 
 const HTML = async () => {
 
-    const posts = await getAllPosts('interface/html');
-
     return(
         <div>
-            {posts.map(({ id, date, title, html },idx) => (
-
-                <article key={id}
-                className="prose prose-lg prose-slate mx-auto dark:prose-invert"
-                dangerouslySetInnerHTML={{ __html: html }}
-                />  
-
-            ))}
+            준비중
         </div>
     )
 }
