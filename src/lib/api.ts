@@ -10,16 +10,15 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-const postsDirectory = path.join(process.cwd(), '/src/_posts');
 
-function getPostFiles() {
-  return fs.readdirSync(postsDirectory);
+function getPostFiles(postsDirectory:string) {
+  return fs.readdirSync( postsDirectory);
 }
 
 function getParser() {
   return unified()
     .use(remarkParse)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(remarkGfm)
     .use(rehypeStringify)
     .use(rehypeStringify)
@@ -40,7 +39,7 @@ function getParser() {
 const parser = getParser();
 
 // 특정 글의 데이터를 가져온다
-export async function getPostById(id: string) {
+export async function getPostById(postsDirectory:string, id: string) {
   const realId = id.replace(/\.md$/, '');
   const fullPath = path.join(postsDirectory, `${realId}.md`);
   const { data, content } = matter(await fs.promises.readFile(fullPath, 'utf8'));
@@ -58,8 +57,10 @@ export async function getPostById(id: string) {
 }
 
 // 모든 글의 데이터를 가져온다.
-export async function getAllPosts() {
-  const posts = await Promise.all(getPostFiles().map(id => getPostById(id)));
+export async function getAllPosts(reqyestPost:string) {
+
+  const postsDirectory:string = path.join(process.cwd(), '/src/_posts/'+ reqyestPost);
+  const posts = await Promise.all(getPostFiles(postsDirectory).map(id => getPostById(postsDirectory, id)));
   // 날짜 내림차순 정렬
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
