@@ -5,7 +5,7 @@ type PageProps = {
 }
 const Post = async ({ params }: PageProps) => {
   const { id } =  params;
-  const { html, title, date } = await getPostById('interface/html', id);
+  const { html, title, date } = await getPostById('interface/svg', id);
   return (
     <article>
       <h1>{title}</h1>
@@ -18,7 +18,7 @@ const Post = async ({ params }: PageProps) => {
 export default Post;
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts('interface/html');
+  const posts = await getAllPosts('interface/svg');
   return posts.map(post => ({
     id: post.id,
   }));
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
-  const { title } = await getPostById('interface/html', id);
+  const { title } = await getPostById('interface/svg', id);
   if (!title) {
     return {
       title: 'Post Not Found',

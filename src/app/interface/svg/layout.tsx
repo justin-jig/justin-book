@@ -9,7 +9,7 @@ export default async function PostLayout({
     }:  Readonly<{children: React.ReactNode;
     }>) {
 
-     const posts = await getAllPostsTitle('interface/html');
+     const posts = await getAllPostsTitle('interface/svg');
     return (
         <div className={styles.layout}>
             <div className={styles.left}>
@@ -18,7 +18,7 @@ export default async function PostLayout({
                     {posts.map((data,idx) => {
                         return(
                             <div key={idx}>
-                                <Link href={`/interface/html/${data}`} >{data}</Link>
+                                <Link href={`/interface/svg/${data}`} >{data}</Link>
                             </div>
                         )
                     })}
