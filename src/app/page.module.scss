@@ -1,5 +1,6 @@
 
-@import '../common/style/variable';
+@use '../common/style/variable' as *;
+
 .container {
     width: 100vw; height: 100vh;
 

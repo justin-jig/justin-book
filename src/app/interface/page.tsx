@@ -1,8 +1,5 @@
 
 
-
-import PostLayoutComponents from "../../common/components/PostLayout";
-
 const Page = async () => {
 
     return(

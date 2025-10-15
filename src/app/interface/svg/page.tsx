@@ -1,9 +1,5 @@
 
-import { getAllPosts } from '../../../lib/api';
-
 const HTML = async () => {
-
-    const posts = await getAllPosts('interface/svg');
 
     return(
         <div>
