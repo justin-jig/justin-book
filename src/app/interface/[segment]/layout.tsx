@@ -15,9 +15,9 @@ type PageProps = {
 export default async function PostLayout({
     children,
     params
-    }:  Readonly<{children: React.ReactNode
+    }:  {children: React.ReactNode
         params:PageProps["params"]
-    }>) {
+    }) {
 
     const { segment } = await params;
 
