@@ -6,6 +6,7 @@ import { ALLOWED_SEGMENTS_interface } from '../../../../common/define/navigation
 type PageProps = {
   params: Promise<{ segment: string, id: string }>
 }
+
 export const dynamic = "error";       // 동적 렌더링 금지
 export const revalidate = false;      // ISR 비활성화
 export const dynamicParams = false;   // generateStaticParams 이외 404

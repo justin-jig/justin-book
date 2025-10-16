@@ -2,11 +2,13 @@
 import { ALLOWED_SEGMENTS_interface } from '../../../common/define/navigation'
 import { notFound } from "next/navigation";
 
-
+type PageProps = {
+  params: Promise<{ segment: string, id: string }>
+}
 export const dynamicParams = false; // 이외의 값은 404
 
-export default function Page({ params }: { params: { segment: string } }) {
-    const { segment } = params;
+export default async function Page({ params }: PageProps) {
+    const { segment } = await params;
 
     if (!ALLOWED_SEGMENTS_interface.includes(segment as string)) {
         // 404 처리
