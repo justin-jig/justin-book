@@ -1,4 +1,8 @@
 
+// output: "export" 에서는 동적 파라미터가 불가능하기 때문에
+// 허용할 segment 목록을 미리 지정해야 함
+
+export const ALLOWED_SEGMENTS_interface = ['html','css','svg','canvas'] as const;
 
 
 export const navigation = [

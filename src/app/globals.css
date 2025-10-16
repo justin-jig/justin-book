@@ -2,37 +2,40 @@
 /* GitHub Markdown 스타일 */
 @import "github-markdown-css/github-markdown.css";
 /* 다크모드 지원 (시스템 다크일 때 자동 전환) */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   @import "github-markdown-css/github-markdown-dark.css";
-}
+} */
 
 /* 코드 하이라이트(hljs 테마) — GitHub 테마와 잘 어울림 */
 @import "highlight.js/styles/github.css";
+
 /* 다크 모드 테마 전환 */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   @import "highlight.js/styles/github-dark.css";
-}
+} */
 
 /* 가독성/반응형 보정 */
 .markdown-body {
   box-sizing: border-box;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  max-width: 900px;          /* 필요 시 조절 */
+  margin: 0 auto; 
+  font-size: 15px;
+  padding: 3rem 2rem;
+  background-color: #fcfbfb;
+  color: #333333;
+  /* 필요 시 조절 */
 }
+@media (max-width: 767px) {
+  .markdown-body {
+    width: 90%; padding: 1rem;
+    font-size: 13px;
+  }
+}
+
 .markdown-body img { max-width: 100%; }
 .markdown-body table { display: block; width: 100%; overflow: auto; }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  font-family: var(--font-noto-sans);
 }
 
 html,
@@ -41,9 +44,9 @@ body {
   overflow-x: hidden;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-noto-sans), sans-serif;
+  -webkit-font-smoothing: antialiased; /* macOS 및 WebKit 기반 브라우저에서 글꼴을 더 부드럽게 렌더링*/
+  -moz-osx-font-smoothing: grayscale; /* macOS의 Firefox에서 텍스트를 회색 안티앨리어싱으로 렌더링.*/
 }
 * {
   box-sizing: border-box;
@@ -56,7 +59,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-  }
-}

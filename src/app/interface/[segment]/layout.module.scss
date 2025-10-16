@@ -1,0 +1,66 @@
+
+@use '../../../common/style/variable' as *;
+@use '../../../common/style/_responsive' as *;
+
+.layout {
+   width: 100vw; min-height: 100vh; display: flex;
+   .left {
+        width: 300px; left: 0; z-index: 20; height: auto;
+        box-sizing: border-box; background-color: $navigationColor ;
+        overflow-y: auto;  
+        header {
+            position: relative;  margin-bottom: 30px;
+            height: 60px; line-height: 60px;  text-align: center;
+            font-size: 1.2em; font-weight: bold; 
+            :hover {
+                opacity: 0.8;
+            }
+        }
+        .navigation {
+            position: relative; padding: 0.9rem;
+            color: #364458; font-size: 0.9rem; 
+            height: calc(100vh); transition: all .3s ease; 
+            a {
+                    display: block; width: 100%; height: 100%;
+            }
+            .naviItem{
+                padding: 0.3rem; border-radius: 5px; margin-bottom: 5px;
+                transition: all .3s ease;
+            }
+            &.ativce {
+                font-weight: bold; color: #364458;
+            }
+            :hover{
+                background-color: darken($navigationColor, 5%);
+            }
+        }
+
+        @include response_to_max('md') {
+            width: 100vw;   
+            display: none;
+        }
+    }
+    .right {
+        box-sizing: border-box; width: calc(100vw - 300px);
+        background-color: $backgroundColor;
+        position: relative;
+        .contentsHeader{
+            position: fixed; z-index: 21; 
+            right: 0; top: 0;
+            height: 60px;
+        }
+    }
+    .pageTop {
+        position: fixed; bottom: 15px; right: 15px; cursor: pointer;
+        font-size: 2rem;
+    }
+
+    @include response_to_max('md') {
+        .left {
+            display: none;
+        }
+        .right{
+            width: 100vw;   
+        }
+    }
+}

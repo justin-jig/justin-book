@@ -1,0 +1,41 @@
+
+// $breakpoints: (
+//   'defalut':1920px // 기준점
+//   'xs': 0px,    // 초소형 장치 (모바일)
+//   'sm': 480px,  // 작은 장치 (작은 스마트폰)
+//   'sm-md': 576px,  // 작은-중간 장치 (스마트폰)
+//   'md': 768px,  // 중간 장치 (태블릿)
+//   'md-lg': 992px,  // 중간-큰 장치 (작은 데스크탑)
+//   'lg': 1200px, // 큰 장치 (데스크탑)
+//   'xl': 1400px, // 초대형 장치 (큰 데스크탑)
+//   'xxl': 1600px // 초초대형 장치 (초대형)
+// );
+
+$breakpoints: (
+  'defalut':1920px, // 기준점
+  'xl': 1440px, // 초대형 장치 (큰 데스크탑)
+  'lg': 1200px, // 큰 장치 (데스크탑)
+  'md': 768px,  // 중간 장치 (태블릿)
+  'sm-md': 620px,  // 작은-중간 장치 (스마트폰)
+  'sm': 480px,  // 작은 장치 (작은 스마트폰)
+);
+
+@mixin response_to_min($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+};
+@mixin response_to_max($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+};
+
