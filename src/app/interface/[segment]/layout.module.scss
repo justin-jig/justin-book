@@ -2,29 +2,6 @@
 @use '../../../common/style/variable' as *;
 @use '../../../common/style/_responsive' as *;
 
-
-
-
-/* 가독성/반응형 보정 */
-.markdown-body {
-  box-sizing: border-box;
-  margin: 0 auto; 
-  font-size: 15px;
-  padding: 3rem 2rem;
-  background-color: #fcfbfb;
-  color: #333333;
-  /* 필요 시 조절 */
-}
-@media (max-width: 767px) {
-  .markdown-body {
-    width: 90%; padding: 1rem;
-    font-size: 13px;
-  }
-}
-
-.markdown-body img { max-width: 100%; }
-.markdown-body table { display: block; width: 100%; overflow: auto; }
-
 .layout {
    width: 100vw; min-height: 100vh; display: flex;
    .left {

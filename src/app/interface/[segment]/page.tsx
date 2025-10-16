@@ -8,7 +8,7 @@ export const dynamicParams = false; // 이외의 값은 404
 export default function Page({ params }: { params: { segment: string } }) {
     const { segment } = params;
 
-    if (!ALLOWED_SEGMENTS_interface.includes(segment as any)) {
+    if (!ALLOWED_SEGMENTS_interface.includes(segment as string)) {
         // 404 처리
         return notFound();
     }
