@@ -30,7 +30,7 @@ const Post = async ({ params }: PageProps) => {
     
     if (id === null) return notFound();
     return (
-        <article className='.markdown-body'>
+        <article className='markdown-body'>
             <h1>{title}</h1>
             <h4>{date}</h4>
             <div dangerouslySetInnerHTML={{ __html: html }} />
