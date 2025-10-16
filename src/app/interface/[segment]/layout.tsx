@@ -9,15 +9,15 @@ import NavigationItem from "../../../common/components/NavigationItem";
 import { getAllPostsTitle } from '../../../lib/api';
 
 type PageProps = {
-  params: Promise<{ segment: string, id: string }>
+  params: Promise<{ segment: string}>
 }
 
 export default async function PostLayout({
     children,
     params
-    }:  {children: React.ReactNode
+    }:  Readonly<{children: React.ReactNode
         params:PageProps["params"]
-    }) {
+    }>) {
 
     const { segment } = await params;
 
