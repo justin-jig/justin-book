@@ -1,0 +1,42 @@
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.notfound-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #1f2937; /* 회색-800 */
+  margin-bottom: 0.5rem;
+}
+
+.notfound-text {
+  font-size: 1.125rem;
+  color: #4b5563; /* 회색-600 */
+  margin-bottom: 2rem;
+}
+
+.notfound-button {
+  background-color: #00509D; /* 파랑-600 */
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  &:hover {
+    background-color: #003F88; /* 파랑-700 */
+  }
+  &:active {
+  transform: scale(0.97);
+  }
+}

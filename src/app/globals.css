@@ -1,18 +1,16 @@
 
-/* GitHub Markdown 스타일 */
+/* GitHub Markdown 테마 */
 @import "github-markdown-css/github-markdown.css";
-/* 다크모드 지원 (시스템 다크일 때 자동 전환) */
-/* @media (prefers-color-scheme: dark) {
-  @import "github-markdown-css/github-markdown-dark.css";
-} */
 
-/* 코드 하이라이트(hljs 테마) — GitHub 테마와 잘 어울림 */
+/* 코드 색상 테마 */
 @import "highlight.js/styles/github.css";
 
-/* 다크 모드 테마 전환 */
+/* 다크모드 지원 (시스템 다크일 때 자동 전환) */
 /* @media (prefers-color-scheme: dark) {
-  @import "highlight.js/styles/github-dark.css";
+  /** @import "github-markdown-css/github-markdown-dark.css"
+   @import "github-markdown-css/github-markdown.css";
 } */
+
 
 /* 가독성/반응형 보정 */
 .markdown-body {
@@ -33,6 +31,56 @@
 
 .markdown-body img { max-width: 100%; }
 .markdown-body table { display: block; width: 100%; overflow: auto; }
+.markdown-body textarea,
+.markdown-body select {
+  display: block;
+  width: 100%;
+  max-width: 640px;      /* 필요 시 조절 */
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #24292f;
+  background-color: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  margin: .25rem 0 1rem;
+}
+.markdown-body input::placeholder,
+.markdown-body textarea::placeholder {
+  color: #6e7781;
+}
+
+.markdown-body input:focus,
+.markdown-body textarea:focus,
+.markdown-body select:focus {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, .15);
+}
+
+/* 전역 CSS 맨 아래쪽에 추가 */
+.markdown-body table,
+.markdown-body th,
+.markdown-body td {
+  background-color: #ffffff !important;
+  color: #24292f !important;
+}
+
+.markdown-body tr {
+  background-color: transparent !important;
+}
+
+/* 필요하면 변수도 라이트로 고정 */
+.markdown-body {
+  color-scheme: light;
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-fg-default: #24292f;
+  --color-border-default: #d0d7de;
+}
+
+
 
 :root {
   font-family: var(--font-noto-sans);

@@ -26,10 +26,11 @@ export async function generateStaticParams() {
 
 const Post = async ({ params }: PageProps) => {
 
-    const { id } = await params;
-    const { html, title, date } = await getPostById('interface/html', id);
+    const { id, segment } = await params;
+    console.log('id, segment', id, segment);
+    const { html, title, date } = await getPostById(`interface/${segment}`, id);
     
-    if (id === null) return notFound();
+    if (id === null || segment === null) return notFound();
     return (
         <article className='markdown-body'>
             <h1>{title}</h1>

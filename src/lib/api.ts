@@ -9,6 +9,8 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import remarkEmoji from 'remark-emoji';
+import rehypeHighlight from "rehype-highlight";
 import { unified } from 'unified';
 
 
@@ -18,7 +20,9 @@ function getPostFiles(postsDirectory:string) {
 function getParser() {
   return unified()
     .use(remarkParse)
-    .use(remarkGfm)                                   // ⬅️ GFM은 rehype 변환 전에
+    .use(remarkGfm)      
+    .use(rehypeHighlight) // ✅ 하이라이트 추가
+    .use(remarkEmoji, { emoticon: true })                             // ⬅️ GFM은 rehype 변환 전에
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)                                   // ⬅️ MD 안의 원시 HTML 처리
     .use(rehypeSlug)

@@ -4,10 +4,8 @@ import { navigation } from '../common/define/navigation';
 import styles from './page.module.scss';
 
 const Page = async () => {
-  //const posts = await getAllPosts();
   return (
     <div className={styles.container}>
-
         <div className={styles.contents}>
             <div className={styles.contenstBox}>
                 <h4>Welcome</h4>
