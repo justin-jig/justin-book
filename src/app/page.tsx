@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { navigation } from '../common/define/navigation';
 import styles from './page.module.scss';
 
+import SocialLink from '../common/components/SocialLink';
+
 const Page = async () => {
   return (
     <div className={styles.container}>
@@ -21,6 +23,7 @@ const Page = async () => {
                         </div>
                     ))}
                 </div>
+                <SocialLink/>
             </div>
         </div>
     </div>
