@@ -1,5 +1,5 @@
 ---
-title: "React 라이브러리 axios 설정"
+title: "라이브러리 axios 설정"
 date: 2025-10-17
 ---
 
