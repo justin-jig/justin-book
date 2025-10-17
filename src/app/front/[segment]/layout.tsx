@@ -8,6 +8,8 @@ import PageTop from "../../../common/components/PageTop";
 import NavigationItem from "../../../common/components/NavigationItem";
 import { getAllPostsTitle } from '../../../lib/api';
 
+import { Sections } from "../../../common/define/navigation";
+
 type PageProps = {
   params: Promise<{ segment: string}>
 }
@@ -22,14 +24,14 @@ export default async function PostLayout({
     const { segment } = await params;
 
     
-    const posts:string[] = await getAllPostsTitle('interface/'+ segment);
+    const posts:string[] = await getAllPostsTitle(`${Sections[0]}/`+ segment);
 
     return (
         <div className={styles.layout}>
             <div className={styles.left}>
                 <header><Link href={'/'}>Justin-book</Link></header>
                 <div className={styles.navigation}>
-                    <NavigationItem url={'interface/'+ segment} posts={posts} />
+                    <NavigationItem url={`${Sections[0]}/`+ segment} posts={posts} />
                 </div>
             </div>
             <div className={styles.right}>

@@ -1,6 +1,8 @@
 import { getPostById, getAllPostsTitle } from '../../../../lib/api';
 import { notFound } from "next/navigation";
-import { ALLOWED_SEGMENTS_interface } from '../../../../common/define/navigation'
+import { ALLOWED_SEGMENTS_front } from '../../../../common/define/navigation'
+
+import { Sections } from '../../../../common/define/navigation';
 
 
 type PageProps = {
@@ -13,8 +15,8 @@ export const dynamicParams = false;   // generateStaticParams 이외 404
 
 export async function generateStaticParams() {
     const params: { segment: string; id: string }[] = [];
-    for (const segment of ALLOWED_SEGMENTS_interface) {
-        const posts = await getAllPostsTitle(`interface/${segment}`);
+    for (const segment of ALLOWED_SEGMENTS_front) {
+        const posts = await getAllPostsTitle(`${Sections[0]}/${segment}`);
         posts.map( id =>{
             params.push({ segment, id }); 
         })
@@ -28,7 +30,7 @@ const Post = async ({ params }: PageProps) => {
 
     const { id, segment } = await params;
     console.log('id, segment', id, segment);
-    const { html, title, date } = await getPostById(`interface/${segment}`, id);
+    const { html, title, date } = await getPostById(`${Sections[0]}/${segment}`, id);
     
     if (id === null || segment === null) return notFound();
     return (

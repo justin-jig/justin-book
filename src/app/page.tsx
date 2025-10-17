@@ -11,7 +11,7 @@ const Page = async () => {
         <div className={styles.contents}>
             <div className={styles.contenstBox}>
                 <h4>Welcome</h4>
-                <h1>Jusin Books</h1>
+                <h1>Justin Books</h1>
                 <div className={styles.navigations}>
                     {navigation.map((nav, index) => (
                         <div key={index} className={styles.navItem}>
