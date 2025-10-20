@@ -1,0 +1,43 @@
+
+ 
+ @use '../../common/style/variable' as *;
+
+.main_menu {
+    margin-top: 20px; margin-bottom: 10px;     box-sizing: border-box;   
+    .menu_section {
+        display: flex; gap: 25px; justify-content: center; height: 58px;
+        background-color: rgb(6, 106, 201, 0.2); border-radius: 0.625rem; align-items: center;
+        border-radius: 0.8em; margin-bottom: 0.5em;
+        li {
+            padding: 0.6rem 1.5rem; border-radius: 0.4em; cursor: pointer;
+            min-width: 98px;
+            box-sizing: border-box; list-style: none; color: #066ac9;
+            font-size: $regular; font-weight: 300; text-align: center;
+            &.active, &:hover {
+                color: #ffffff;
+                background-color:#066ac9;
+                font-weight: 600;
+            }
+        }
+    }
+    .sub_menu {
+        display: flex; margin-bottom: 50px;
+        flex-wrap: wrap; gap: 16px; 
+        padding: 1.5em;background-color: rgb(245, 247, 249);
+        border-radius: 0.8em; min-height: 150px;  width: 480px;
+        .menu { 
+            padding: 0.4em; width: calc(33.333% - 14px); 
+            flex: 0 0 calc(33.333% - 14px); /* 한 줄에 3개 (간격 고려) */
+            a {
+                display: block; height: 58px; line-height: 58px; color: #000; 
+                font-weight: 600; background-color: #fefefe;  padding: 0 0.4em;
+                border:#b4b4b4 1px solid; border-radius: 0.4em; text-align: center;
+                font-size: $regular; text-decoration: none; overflow: hidden;
+                text-overflow: ellipsis; white-space: nowrap;
+                &:hover {
+                   transform: scale(1.06);
+                }
+            }  
+        }
+    }
+}

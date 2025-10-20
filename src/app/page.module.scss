@@ -10,24 +10,7 @@
                 height: 180px; text-align: center;
         }
 
-        .navigations {
-            display: flex; gap: 25px; justify-content: center; margin-top: 20px;
-            margin-bottom: 10px;        
-            border: 2px solid $CloudyColor; border-radius: 5px; padding: 1.5em;
-            border-radius: 0.8em;
-            .navItem {
-                .nav { 
-                    padding: 0.4em;
-                    a {
-                        font-size: $regular; text-decoration: none; color: $SecondaryColor;
-                        opacity: 0.9; 
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }  
-                }
-            }
-        }
+        
        
     }
    
