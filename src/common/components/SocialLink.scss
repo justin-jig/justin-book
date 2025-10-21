@@ -2,7 +2,7 @@
  @use '../../common/style/variable' as *;
 
  .link-box {
-    display: flex; gap: 15px; justify-content: center; margin-top: 20px;
+    display: flex; gap: 15px; justify-content: center;
     div {
         width: 35px; height: 35px;
         svg {

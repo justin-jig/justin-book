@@ -5,13 +5,16 @@
     width: 100vw; height: 100vh;
     .contents {
         display: flex; align-items: center; justify-content: center;
-        width: 100vw; height: calc(100vh - 180px);
-        .contenstBox{
-                height: 180px; text-align: center;
-        }
+        width: 100%; //height: calc(100vh - 588px);
+        height: 100%;
+        .contenstBox {
+            height: auto; text-align: center;
+            height: calc(100% - 508px);
 
-        
-       
+            h1 {
+                margin-bottom: 30px;
+            }
+        }
+    
     }
-   
 }
