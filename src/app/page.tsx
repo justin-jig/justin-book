@@ -7,6 +7,7 @@ import SocialLink from '../common/components/SocialLink';
 import MainMenu from '../common/components/MainMenu';
 
 const Page = async () => {
+
   return (
     <div className={styles.container}>
         <div className={styles.contents}>

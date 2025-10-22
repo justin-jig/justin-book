@@ -28,7 +28,6 @@ export default function  NavigationItem({ url, posts }: NavigationItemProps): JS
     return (
         <>
             {posts.map((data,idx) => {
-                console.log('data', data, url)
                 return(
                     <div className="naviItem" key={idx}>
                         <Link href={`/${url}/${data}`} style={params?.id === data ? {fontWeight:"bold"}:{}} >{data}</Link>

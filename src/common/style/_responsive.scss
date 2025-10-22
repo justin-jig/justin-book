@@ -20,7 +20,7 @@ $breakpoints: (
   'sm': 480px,  // 작은 장치 (작은 스마트폰)
 );
 
-@mixin response_to_min($breakpoint) {
+@mixin response-to-min($breakpoint) {
   $size: map-get($breakpoints, $breakpoint);
   
   @if $size {
@@ -29,7 +29,7 @@ $breakpoints: (
     }
   }
 };
-@mixin response_to_max($breakpoint) {
+@mixin response-to-max($breakpoint) {
   $size: map-get($breakpoints, $breakpoint);
   
   @if $size {

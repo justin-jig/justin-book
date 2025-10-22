@@ -22,6 +22,8 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
     // 마우스 이벤트
     const handleMouseDown = (e: MouseEvent<HTMLUListElement, globalThis.MouseEvent>) => {
         if (!scrollRef.current) return;
+        e.stopPropagation();
+        e.preventDefault
         setIsDragging(true);
         setStartX(e.pageX - scrollRef.current.offsetLeft);
         setScrollLeft(scrollRef.current.scrollLeft);
@@ -41,6 +43,8 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
     // 터치 이벤트
     const handleTouchStart = (e:TouchEvent<HTMLUListElement>) => {
         if (!scrollRef.current) return;
+        e.stopPropagation();
+        e.preventDefault
         setIsDragging(true);
         setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
         setScrollLeft(scrollRef.current.scrollLeft);
@@ -48,6 +52,8 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
 
     const handleTouchMove = (e: TouchEvent<HTMLUListElement>) => {
         if (!isDragging || !scrollRef.current) return;
+         e.stopPropagation();
+        e.preventDefault
         const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 1.5;
         scrollRef.current.scrollLeft = scrollLeft - walk;
@@ -63,8 +69,10 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
         if(index === 0) {
             scrollRef.current.scrollLeft = 0;
         } else if (index === 1){
-               scrollRef.current.scrollLeft = 80;
-        }else {
+            scrollRef.current.scrollLeft = 80;
+        } else if (index === 2){
+            scrollRef.current.scrollLeft = 140;
+        }  else {
         const clickX = e.pageX - scrollRef.current.offsetLeft;
         scrollRef.current.scrollLeft = clickX;
         }
@@ -90,6 +98,15 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
         <>
             <div className="main_menu">
                 <div className="menu_section">
+
+                    <div className="move-btn">
+                        <button  onClick={scrollMoveLeft} className="scroll-btn" aria-label="왼쪽으로 이동">
+                            <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button onClick={scrollMoveRight} className="scroll-btn" aria-label="오른쪽으로 이동">
+                            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
                     <ul  ref={scrollRef} 
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
@@ -98,16 +115,6 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}>
-
-                        <div className="move-btn">
-                            <button  onClick={scrollMoveLeft} className="scroll-btn" aria-label="왼쪽으로 이동">
-                                <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-                            </button>
-                            <button onClick={scrollMoveRight} className="scroll-btn" aria-label="오른쪽으로 이동">
-                                <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-
                         {menu.map((item, index) => (
                             <li key={index} className={menuIndex === index ? "menu_item active": "menu_item"}
                                 onClick={(e) => menuClick(e,index)}>

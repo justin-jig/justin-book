@@ -4,10 +4,10 @@
 
 .main_menu {
     margin-top: 20px; margin-bottom: 15px; box-sizing: border-box;   
-    width: 480px;
+    width: 480px; 
     .menu_section {
         background-color: rgb(6, 106, 201, 0.2); border-radius: 0.125rem; 
-        margin-bottom: 1.2em;  position: relative;
+        margin-bottom: 1.2em;  position: relative; 
         .move-btn {
             position: absolute; right: 1px; top: -34px; cursor: pointer;
             display: flex; gap: 12px; z-index: 0;
@@ -41,19 +41,18 @@
             width: 100%;  overflow: hidden; // 스크롤 숨김 
             cursor: grab;
 
-
             li {
-                min-width: 88px; text-align: center; height: 37px;
-                padding: 0.6rem 1.5rem; border-radius: 0.4em; cursor: pointer;
+                min-width: 92px; text-align: center; 
+                padding: 0.5rem 0.5rem; border-radius: 0.4em; cursor: pointer;
                 box-sizing: border-box; list-style: none; color: #043f77;
                 font-size: $regular; font-weight: 300; text-align: center;
-                margin-right: 10px;
-                &:last-child {
+                margin-right: 8px;
+                &:last-child,&:nth-last-child(2) {
                     margin-right: 0;
                 }
                 &.active //, &:hover {
                 {
-                    color: #ffffff;  padding: 0.6rem 1.5rem;
+                    color: #ffffff;  
                     background-color:#066ac9;
                     font-weight: 600;
                 }
