@@ -1,5 +1,5 @@
 ---
-title: "CS 기본 개념 - 컴퓨터 계층 구조"
+title: "CS 기본 개념(fundamentals) - 컴퓨터 계층 구조"
 date: 2025-10-17
 ---
 

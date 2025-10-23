@@ -3,7 +3,7 @@ title: "javasciprt overview"
 date: 2025-10-17
 ---
 
-### 📘 요약
+##### 요약
 
 > 자바스크립트는 웹의 ‘언어’에서 시작해,
 > 오늘날에는 **클라우드, AI, IoT까지 아우르는 범용 프로그래밍 언어**로 진화했다.
@@ -12,7 +12,7 @@ date: 2025-10-17
 
 ---
 
-# 🌍 JavaScript Overview
+#  JavaScript Overview
 
 ## 1. 탄생 배경
 
