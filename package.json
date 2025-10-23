@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
     "github-markdown-css": "^5.8.1",
     "next": "15.5.5",
     "react": "19.1.0",
