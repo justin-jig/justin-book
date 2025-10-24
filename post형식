@@ -1,6 +1,8 @@
 
 형식은 문서 구조, 어조, 구성, 표기 방식이 모두 “기술 문서 표준 템플릿(Technical Documentation Template)” 형태
---- title / date / version ---
+--- title / date ---
+
+** version **
 
 #### 요약 (핵심 + 리스트 + 정리문단)
 
