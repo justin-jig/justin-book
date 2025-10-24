@@ -119,5 +119,23 @@ export async function getAllPostsTitle(reqyestPost: string) {
   const posts = await Promise.all(
     getPostFiles(postsDirectory).map(id => id.replace(/\.md$/, ""))
   );
-  return posts.sort();
+  return await posts.sort((a, b) => {
+  const hasNumA = /^\d+/.test(a);
+  const hasNumB = /^\d+/.test(b);
+
+  if (hasNumA && hasNumB) {
+    // 둘 다 숫자 접두사 → 숫자 기준 정렬
+    return parseInt(a) - parseInt(b);
+  } else if (hasNumA) {
+    // A만 숫자 → 숫자 우선
+    return -1;
+  } else if (hasNumB) {
+    // B만 숫자 → 숫자 우선
+    return 1;
+  } else {
+    // 둘 다 숫자 없음 → 문자열 기준 정렬
+    return a.localeCompare(b);
+  }
+});
+
 }

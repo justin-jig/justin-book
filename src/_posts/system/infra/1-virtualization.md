@@ -14,7 +14,7 @@ date: 2025-10-17
 <div style="text-align:center;">
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize":"20px","nodeTextColor":"#222","mainBkg":"#ffffff"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize":"14px","nodeTextColor":"#222","mainBkg":"#ffffff", "scale":0.6}}}%%
 flowchart TD
     %% 1. 물리 서버 영역
     subgraph P["물리 서버 (Physical Server)"]
