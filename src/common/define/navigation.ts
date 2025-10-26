@@ -4,14 +4,14 @@
 
 // export const Sections:string[]= ["cs", "front","back","ai", "oss"] as const;
 
-export const Sections:string[]= ["cs", "system", "language", "front", "back"] as const;
+export const Sections:string[]= ["cs", "system", "runtime", "front", "back"] as const;
 
 export const ALLOWED_SEGMENTS: Record<string, readonly string[]> = {
-    cs: ["FND", "Arch", "DSA", "os", "network"],
+    cs: ["collaborate", "computer", "DSA", "network"],
     system:["infra","cloud", "ubuntu", "docker"],
-    language: ["javascript", "typescript", "nodejs", "java", "python"],
+    runtime: ["mySQL","postgreSQL","rdis","javascript", "typescript", "nodejs", "java", "python"],
     front: ["core", "module", "ui", "buildTools", "react", "next"],
-    back: ["core", "express", "nestjs", "spring", "flask", "postgreSQL"]
+    back: ["core","log-test","async","express", "nestjs", "spring", "fastapi"]
 } as const;
 
 // back: ["core", "node", "spring boot", "api", "security"]
