@@ -27,7 +27,7 @@ function remarkMermaidAsHtml() {
         parent.children[index] = {
           type: "html",
           value: `<div class="mermaid">${code.value}</div>`,
-        } as any; // HTML 노드 삽입
+        }; // HTML 노드 삽입
       }
     });
   };
