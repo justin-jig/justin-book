@@ -11,17 +11,10 @@ date: 2025-10-25
 
 ##### 참고자료 (내부 링크 포함)
 
-- [00-overview](./00-overview.md)
-- [01-setup-and-connection](./01-setup-and-connection.md)
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
 
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
-
-
-#### 2. 변환 요약 표
+#### 1. 변환 요약 표
 
 | 항목 | MySQL | PostgreSQL |
 |---|---|---|
@@ -31,7 +24,7 @@ date: 2025-10-25
 | GROUP BY | 느슨 | 엄격 (비집계 컬럼 모두 명시) |
 | LIMIT | LIMIT n OFFSET m, 또는 LIMIT m,n | LIMIT n OFFSET m |
 
-#### 3. 예시 변환
+#### 2. 예시 변환
 
 ```sql
 -- MySQL

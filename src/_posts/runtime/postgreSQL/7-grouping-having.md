@@ -13,13 +13,8 @@ date: 2025-10-25
 
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
 
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
-
-
-#### 2. 기본 패턴
+#### 1. 기본 패턴
 
 ```sql
 SELECT number, COUNT(*) AS 건수
@@ -38,7 +33,7 @@ HAVING SUM(sales) >= 200
 ORDER BY AVG(sales) DESC;
 ```
 
-#### 3. WHERE vs HAVING
+#### 2. WHERE vs HAVING
 
 - WHERE: **그룹화 이전**의 행 필터
 - HAVING: **그룹화 이후**의 그룹 필터

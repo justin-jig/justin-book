@@ -12,36 +12,30 @@ date: 2025-10-25
 - 예제는 PostgreSQL 16 기준이며, `psql` 사용 예시를 제공
 
 ##### 참고자료
-
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
 
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
-
-
-#### 2. NOW/EXTRACT/AGE
+#### 1. NOW/EXTRACT/AGE
 
 ```sql
 SELECT NOW(), CURRENT_DATE, EXTRACT(YEAR FROM NOW()) AS yyyy;
 SELECT AGE(NOW(), TIMESTAMP '2024-01-01 00:00:00');
 ```
 
-#### 3. 포맷팅
+#### 2. 포맷팅
 
 ```sql
 SELECT TO_CHAR(NOW(), 'YYYY-MM-DD HH24:MI:SS');
 ```
 
-#### 4. TIME ZONE
+#### 3. TIME ZONE
 
 ```sql
 SET TIME ZONE 'Asia/Seoul';
 SELECT NOW() AT TIME ZONE 'UTC' AS utc_now;
 ```
 
-#### 5. DEFAULT NOW()
+#### 4. DEFAULT NOW()
 
 ```sql
 CREATE TABLE rightnow (

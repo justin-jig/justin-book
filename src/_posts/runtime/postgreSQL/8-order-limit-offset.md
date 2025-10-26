@@ -14,25 +14,21 @@ date: 2025-10-25
 
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
-
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
 
 
-#### 2. ORDER BY
+#### 1. ORDER BY
 
 ```sql
 SELECT * FROM tb ORDER BY sales DESC, number ASC;
 ```
 
-#### 3. LIMIT/OFFSET
+#### 2. LIMIT/OFFSET
 
 ```sql
 SELECT * FROM tb ORDER BY sales DESC LIMIT 2 OFFSET 3;
 ```
 
-#### 4. 상위 N 패턴
+#### 3. 상위 N 패턴
 
 ```sql
 SELECT * FROM tb ORDER BY sales DESC LIMIT 10;

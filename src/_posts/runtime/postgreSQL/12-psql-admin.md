@@ -12,13 +12,8 @@ date: 2025-10-25
 ##### 참고자료 
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
 
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
-
-
-#### 2. 롤/권한
+#### 1. 롤/권한
 
 ```sql
 CREATE ROLE app LOGIN PASSWORD 'secret';
@@ -27,7 +22,7 @@ GRANT USAGE, CREATE ON SCHEMA public TO app;
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO app;
 ```
 
-#### 3. 백업/복원
+#### 2. 백업/복원
 
 ```bash
 pg_dump -h localhost -U postgres -d addrdb -Fc -f addrdb.dump
@@ -36,7 +31,7 @@ pg_restore -h localhost -U postgres -d newdb addrdb.dump
 pg_dump -h localhost -U postgres -d addrdb | psql -h localhost -U postgres -d newdb
 ```
 
-#### 4. 자주 쓰는 psql 메타
+#### 3. 자주 쓰는 psql 메타
 
 ```text
 \l   -- DB 목록

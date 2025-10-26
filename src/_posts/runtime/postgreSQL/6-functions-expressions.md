@@ -13,13 +13,8 @@ date: 2025-10-25
 
 - [공식 문서 (PostgreSQL Docs)](https://www.postgresql.org/docs/current/)
 
-#### 1. 서문
 
-이 문서는 GitBook 용도로 작성되었으며, 팀/프로젝트 구성원이 **빠르게 학습 → 일관되게 적용 → 안전하게 운영**할 수 있도록
-**표준 템플릿** 형식을 유지합니다.
-
-
-#### 2. 문자열 함수
+#### 1. 문자열 함수
 
 ```sql
 SELECT number || name || '님' AS welcome FROM tb1k;
@@ -29,7 +24,7 @@ SELECT REPEAT('*', GREATEST(age,0)) FROM tb1k;
 SELECT REVERSE(name) FROM tb1k;
 ```
 
-#### 3. 집계/수치
+#### 2. 집계/수치
 
 ```sql
 SELECT SUM(sales) AS 합계 FROM tb;
@@ -37,14 +32,14 @@ SELECT '합계는 ' || SUM(sales) || '만원입니다.' AS 매출 FROM tb;
 SELECT '평균은 ' || ROUND(AVG(sales),2) || '만원입니다.' AS 평균 FROM tb;
 ```
 
-#### 4. 캐스팅/형변환
+#### 3. 캐스팅/형변환
 
 ```sql
 SELECT CAST(123 AS TEXT);
 SELECT 123::TEXT;
 ```
 
-#### 5. 날짜/시간
+#### 4. 날짜/시간
 
 ```sql
 SELECT NOW() AS 현재시간, CURRENT_DATE, AGE(NOW(), NOW() - INTERVAL '3 days');

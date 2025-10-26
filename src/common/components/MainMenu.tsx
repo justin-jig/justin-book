@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import { JSX, useEffect, useState,useRef, TouchEvent, MouseEvent } from "react";
-import './MainMenu.scss';
+import "./MainMenu.scss";
 
 type NavigationItemProps = {
   menu: string[];
@@ -17,6 +17,21 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+
+    useEffect(() => {
+        localstorageGetMenuNumber();
+    }, [])
+
+    const localstorageGetMenuNumber = () => {
+        const menu = localStorage.getItem("menu");
+        const parsed = Number(menu);
+        return isNaN(parsed) ? 0 : setMenuIndex(parsed);
+    };
+
+    const localstorageSetMenuNumber = (number: number) => {
+        localStorage.setItem("menu", number.toString());
+    };
+
 
     
     // 마우스 이벤트
@@ -77,7 +92,8 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
         scrollRef.current.scrollLeft = clickX;
         }
 
-        setMenuIndex(index)
+        setMenuIndex(index);
+        localstorageSetMenuNumber(index);
     };
 
     const scrollMoveLeft = () => {
@@ -91,8 +107,6 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
         scrollRef.current.scrollBy({ left: 200, behavior: 'smooth' });
         }
     };
-
-
 
     return (
         <>
