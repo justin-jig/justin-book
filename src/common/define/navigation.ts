@@ -8,7 +8,7 @@ export const Sections:string[]= ["cs", "system", "runtime", "front", "back"] as 
 
 export const ALLOWED_SEGMENTS: Record<string, readonly string[]> = {
     cs: ["collaborate", "computer", "DSA", "network"],
-    system:["infra","cloud", "ubuntu", "docker"],
+    system:["infra","cloud", "ubuntu", "tools", "docker"],
     runtime: ["mySQL","postgreSQL","rdis","javascript", "typescript", "nodejs", "java", "python"],
     front: ["core", "module", "ui", "buildTools", "react", "next"],
     back: ["core","log-test","async","express", "nestjs", "spring", "fastapi"]
