@@ -25,6 +25,7 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
     const localstorageGetMenuNumber = () => {
         const menu = localStorage.getItem("menu");
         const parsed = Number(menu);
+        if(parsed > 2) scrollMoveRight();
         return isNaN(parsed) ? 0 : setMenuIndex(parsed);
     };
 
@@ -67,7 +68,7 @@ export default function  MainMenu({ menu, submenu }: NavigationItemProps): JSX.E
 
     const handleTouchMove = (e: TouchEvent<HTMLUListElement>) => {
         if (!isDragging || !scrollRef.current) return;
-         e.stopPropagation();
+        e.stopPropagation();
         e.preventDefault
         const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 1.5;
