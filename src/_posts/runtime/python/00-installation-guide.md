@@ -114,6 +114,7 @@ pyenv local 3.12.4
 #### 5. venv를 이용한 가상환경 생성
 
 ```bash
+
 # 가상환경 생성
 python -m venv .venv
 
